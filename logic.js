@@ -19,8 +19,8 @@ async function loadContent(group) {
   const timetable = {};
 
   // Load JSON data for the schedule and subject names
-  const tensor = await load_json("./assets/schedules.json");
-  const subject_names = await load_json("./assets/subject-name.json");
+  const tensor = await load_json("./out/schedules.json");
+  const subject_names = await load_json("./data/subject-name.json");
 
   // Define arrays for days and hours
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];

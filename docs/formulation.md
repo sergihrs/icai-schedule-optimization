@@ -1,3 +1,5 @@
+# Mathematical Formulation
+
 ### Sets
 
 g: groups {"IMAT-1A", "IMAT-1B", ...}
@@ -15,7 +17,7 @@ $\text{HS}_{s} \in \mathbb{N}$ = hours of subject s per week to fulfill the curr
 $\text{A}_{gh} \in \{0,1\}$ = availability of group g in hour h
 $\text{TA}_{dht} \in \{0,1\}$ = whether a teacher t is available in hour h of day d
 $\text{TN}_{gs} \in \mathbb{N}_0$ = number of teachers needed per group g and subject s
-$\text{TP}_{dht} \in \{0,1\}$ = whether a teacher t prefers to teach in hour h of day d, 0 if preferred, 1 otherwise 0 (binary)
+$\text{TP}_{dht} \in \{0,1\}$ = whether a teacher t prefers NOT to teach in hour h of day d
 $\text{TS}_{st} \in \{0,1\}$ = whether subject s can be taught by teacher t
 $\text{Q}_{cgs} \in \mathbb{N}_0$ = number of classrooms of type c that a group g needs for a subject s
 $\text{L}_{c} \in \mathbb{N}_0$ = number of available classrooms of type c

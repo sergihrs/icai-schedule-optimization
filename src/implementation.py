@@ -172,7 +172,7 @@ print(f"Model solved in {perf_counter() - start_time:.2f} seconds")
 print(result_obj)
 
 solution_dict = model.x.get_values()
-with open("schedules.json", "w") as outfile:
+with open("./schedules.json", "w", encoding="utf-8") as outfile:
     json_dict = dict()
     for tuple_key, value in solution_dict.items():
         if value == 1.0:

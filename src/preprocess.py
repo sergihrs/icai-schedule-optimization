@@ -1,13 +1,21 @@
 import json
 
-subject_name_json = json.load(open("data/subject-name.json", "r"))
-subject_hours_json = json.load(open("data/subject-hours.json", "r"))
-group_availability_json = json.load(open("data/group_availability.json", "r"))
-teacher_specialty_json = json.load(open("data/teacher_specialty.json", "r"))
-teacher_per_subject_json = json.load(open("data/teachers_per_subject.json", "r"))
-teacher_availability_json = json.load(open("data/teacher_availability.json", "r"))
-Qcgs_json = json.load(open("data/Qcgs.json", "r"))
-Lc_json = json.load(open("data/Lc.json", "r"))
+subject_name_json = json.load(open("data/subject-name.json", "r", encoding="utf-8"))
+subject_hours_json = json.load(open("data/subject-hours.json", "r", encoding="utf-8"))
+group_availability_json = json.load(
+    open("data/group_availability.json", "r", encoding="utf-8")
+)
+teacher_specialty_json = json.load(
+    open("data/teacher_specialty.json", "r", encoding="utf-8")
+)
+teacher_per_subject_json = json.load(
+    open("data/teachers_per_subject.json", "r", encoding="utf-8")
+)
+teacher_availability_json = json.load(
+    open("data/teacher_availability.json", "r", encoding="utf-8")
+)
+Qcgs_json = json.load(open("data/Qcgs.json", "r", encoding="utf-8"))
+Lc_json = json.load(open("data/Lc.json", "r", encoding="utf-8"))
 
 # Sets
 G = {"IMAT-1A", "IMAT-1B", "IMAT-2A", "IMAT-2B", "IMAT-3A"}
@@ -18,6 +26,7 @@ T = set(teacher_availability_json.keys())
 
 C = set(Lc_json.keys())
 
+# Print set differences
 assert T == set(teacher_specialty_json.keys())
 assert set(teacher_per_subject_json.keys()) == S
 

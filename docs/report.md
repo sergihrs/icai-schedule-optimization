@@ -32,20 +32,10 @@ This constraint assures that each class is given by the exact number of teachers
 
 This constraint assures that each group is given only one subject at a specific day and hour, in the groups early or overnight schedule. If $\text{A}_{gh}$ (availability) is 0, the group will not be imparted any class at that slot. It is divided by TN to eliminate the repetitions created by the number of teachers. It is important to consider that when programming the constraint, it has to be controlled that TN is not 0 and skip the constraint when it happens.
 
-- SHR (subject hours requirement):
-  $\sum_{d,h,t} x = \text{HS}_{s} \cdot \text{TN}_{gs} \quad \forall g,s$
+- SHR & T2S & CTA (subject hours requirement, teacher to speciality and checking teacher availability):
+$\sum_{d,h,t} x \cdot \text{TS}_{st} \cdot \text{TA}_{tdh} = \text{HS}_{s} \cdot \text{TN}_{gs} \quad \forall g,s$
 
-This constraint controls that the specified number of hours for each subject is met. It is multiplied by TN to avoid repetitions of teachers.
-
-- T2S (teacher to speciality)
-  $x \le \text{TS}_{st} \quad \forall g,d,h,s,t$
-
-This constraint controls that the teacher teaches a subject which he has knowledge about.
-
-- CTA (checking teacher availability)
-  $x \le \text{TA}_{tdh} \quad \forall g,d,h,s,t$
-
-This constraint controls that the teacher is available at the time he is giving the class.
+This constraint controls that the teacher, in an available hour and day, gives a subject which he has knowledge about. TS controls the specialty, and TA their availability. The sum has to be equal to the H (hour requirements for the subject), multiplied by the TN, which eliminates repetitions of the number of teachers. 
 
 - NTC (no teacher clonation):
   $\sum_{g,s} x \leq 1 \quad \forall d,h,t$
@@ -87,23 +77,29 @@ This penalizes the model for every teacher that is teaching in a time slot that 
 
 The model chosen is ConcreteModel from the Pyomo Python library. This is the summary of the model:
 
-<img src="../images/model.png">
+<img src="../assets/model.png">
 
 This are the coefficient statistics of the model, that give us an idea about the numerical stability of the model:
 
-<img src="../images/coef_stats.png">
+<img src="../assets/coef_stats.png">
 
 The model takes <b>4.3</b> seconds to load.
 
 ## Results
 
 We first tried with glpk, but it was too slow, so we ended up using Gurobi as our preferred solver. This is are the results:
-<img src="../images/gurobi_results.png">
+<img src="../assets/gurobi_results.png">
 
 We can see that the model is able to find the optimal solutio with a $0.0\%$ gap between primal and dual bounds.  
 The model takes <b>4.95</b> seconds to solve.
 
-<!-- Quotation remark -->
+<!-- Character arrow down: &#8595; -->
+<h2 style="text-align: center;">↓↓↓↓↓ IMPORTANT ↓↓↓↓↓ </h2>
 
-> This is a link with an example schedule for IMAT, and all the data used to create it:
-> [Example Schedule](https://goo.gl/7Z6Z9u)
+> This is a link with an example schedule for IMAT: 
+[IMAT Schedule](https://gomicoder17.github.io/icai-schedule-optimization/)
+
+> This is the link to the repository with all the data and code used to create the schedule:
+[Repository](https://github.com/gomicoder17/icai-schedule-optimization)
+
+<h2 style="text-align: center;">↑↑↑↑↑ IMPORTANT ↑↑↑↑↑ </h2>
