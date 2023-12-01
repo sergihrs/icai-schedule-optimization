@@ -52,7 +52,7 @@ $\sum_{g,s} x \leq 1 \quad \forall d,h,t$
 4. Assure that each subject is always taught by the same teacher:
 
     - TCP (teacher consistency principle):
-$\sum_{d,h} x = \text{H}_{s} \cdot \zeta_{gst} \quad \forall g,s,t$
+$\sum_{d,h} x = \text{HS}_{s} \cdot \zeta_{gst} \quad \forall g,s,t$
 
 5. Assure that there are enough classrooms of each type at each time slot:
 
