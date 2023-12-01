@@ -1,0 +1,12 @@
+{
+    "Lab-E": {
+        "IMAT-3A": {
+            "DEAC-IMAT-316-L": 3
+        }
+    },
+    "Lab-R": {
+        "IMAT-3A": {
+            "DEAC-IMAT-317-L": 3
+        }
+    }
+}

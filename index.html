@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="frameset">
+    <div class="sidebar">
+      <ul>
+        <li><b>GROUPS</b>
+          <ul id="Grupos">
+            <li class="groups"><a href="#" onclick="loadContent('IMAT-1A')">Imat 1º A</a></li>
+            <li class="groups"><a href="#" onclick="loadContent('IMAT-1B')">Imat 1º B</a></li>
+            <li class="groups"><a href="#" onclick="loadContent('IMAT-2A')">Imat 2º A</a></li>
+            <li class="groups"><a href="#" onclick="loadContent('IMAT-2B')">Imat 2º B</a></li>
+            <li class="groups"><a href="#" onclick="loadContent('IMAT-3A')">Imat 3º A</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="content">
+      <!-- Center vertically and horizontally -->
+      <img src="./assets/cover.png" alt="Cover" style="margin-top:75px;">
+    </div>
+    <div id="names">
+      Jorge Gómez Azor, Carlos Mazuecos Reíllo, Sergio Herreros Pérez, Daniel Sánchez Sánchez
+    </div>
+  </div>
+  <script src="./logic.js"></script>
+</body>
+
+</html>
