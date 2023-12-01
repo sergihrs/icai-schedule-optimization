@@ -32,10 +32,20 @@ This constraint assures that each class is given by the exact number of teachers
 
 This constraint assures that each group is given only one subject at a specific day and hour, in the groups early or overnight schedule. If $\text{A}_{gh}$ (availability) is 0, the group will not be imparted any class at that slot. It is divided by TN to eliminate the repetitions created by the number of teachers. It is important to consider that when programming the constraint, it has to be controlled that TN is not 0 and skip the constraint when it happens.
 
-- SHR & T2S & CTA (subject hours requirement, teacher to speciality and checking teacher availability):
-  $\sum_{d,h,t} x \cdot \text{TS}_{st} \cdot \text{TA}_{tdh} = \text{HS}_{s} \cdot \text{TN}_{gs} \quad \forall g,s$
+- SHR (subject hours requirement):
+  $\sum_{d,h,t} x = \text{HS}_{s} \cdot \text{TN}_{gs} \quad \forall g,s$
 
-This constraint controls that the teacher, in an available hour and day, teaches a subject which he has knowledge about. It also controls that the specified number of hours for each subject is met. TS controls the teacher's capability to teach a certain subject, and TA their availability. Both have to be 1 for the subject to be taught at that time by the teacher. The sum has to be equal to the H (hour requirements for the subject), multiplied by the TN, which eliminates repetitions of the number of teachers.
+This constraint controls that the specified number of hours for each subject is met. It is multiplied by TN to avoid repetitions of teachers.
+
+- T2S (teacher to speciality)
+  $x \le \text{TS}_{st} \quad \forall g,d,h,s,t$
+
+This constraint controls that the teacher teaches a subject which he has knowledge about.
+
+- CTA (checking teacher availability)
+  $x \le \text{TA}_{tdh} \quad \forall g,d,h,s,t$
+
+This constraint controls that the teacher is available at the time he is giving the class.
 
 - NTC (no teacher clonation):
   $\sum_{g,s} x \leq 1 \quad \forall d,h,t$
