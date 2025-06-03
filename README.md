@@ -16,10 +16,8 @@ The aim is to generate a feasible and efficient timetable that meets all academi
 ### ✅ Hard Constraints
 
 1. **CTC (Complete Teacher Capacity)**  
-   Ensures each subject is assigned the correct number of teachers per group:
-   $$
-   \sum_{t} x = \text{TN}_{gs} \cdot \gamma_{gdhs} \quad \forall g,d,h,s
-   $$
+   Ensures each subject is assigned the correct number of teachers per group: 
+   $$\sum_{t} x = \text{TN}_{gs} \cdot \gamma_{gdhs} \quad \forall g,d,h,s$$
 
 2. **NSD & EOO (Non-Subject Duplication & Early or Overnight Constraints)**  
    A group can only have one subject per time slot, and only within allowed hours:
