@@ -9,6 +9,8 @@ This project focuses on optimizing the weekly class schedule for the **Mathemati
 
 The aim is to generate a feasible and efficient timetable that meets all academic and logistical requirements.
 
+The results are displayed at https://sergihrs.github.io/icai-schedule-optimization/
+
 ---
 
 ## 📌 Problem Overview
